@@ -2,8 +2,8 @@
  ##Adres Kayıt Uygulaması
 
  Öncelikle projeden bahsetmek isterim, sistemde bilgisi gömülü olan bir adet "admin" bulunmaktadır.
- Adminin username olarak "admin1" password ise "123" şeklindedir.Bu bilgileri kullanarak sisteme giriş yapabilir
- ve sonrasında  adres kayıdı ekleme,silme ve güncelleme işlemlerini yapabilirsiniz.
+ Adminin username'i "admin1" password ise "123" şeklindedir.Bu bilgileri kullanarak sisteme giriş yapabilir
+ ve sonrasında  adres kayıdı  ekleme,silme ve güncelleme işlemlerini yapabilirsiniz.
  
  Projenin  kodlanması ve geliştirilmesi kısmında ise JSF,JPA,PRIMEFACES ve MAVEN kullanılmıştır.
  Geliştirme ortamları olarak ise Eclipse ve Apache Tomcat kullanılmıştır.Öncelikle IDE konusunda çok kararsız kaldım. Netbeans  ve Eclipse IDE arasında kaldım diyebilirim.Daha çok sektörde Eclipse IDE  kullanılması sebebiyle tercihim Eclipse IDE oldu.Ama ana sebebi ; Netbeans'de JSF için hazır template/şablonlar sunulduğunu unutmamak  gerekir ayrıca bazı sihirbazlar sayesinde çok fazla kod yazmadan uygulama geliştirilebiliyor.Fakat bu durum genelde öğrenme konusunda sıkıntı çıkaracağını düşünüdüğüm için ve hazıra kaçacağını düşünüdüğüm için Netbeans IDE'yi  tercih etmedim.
