@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+  <style type="text/css">
+    .fixed-size {
+      table-layout: fixed;
+      word-wrap: break-word;
+    }
+   </style>
+</h:head>
+
+  <h:body>
+  
+   <ui:include src="task.xhtml"/>
+   
+   
+  <br/>
+ <h:form>
+ 
+  <p:dataTable id="result" value="#{addressService.listAddress()}" var="record" styleClass="fixed-size">
+	
+	<p:column filterBy="#{record.name}" headerText="Name"  filterMatchMode="contains">		
+		<h:outputText value="#{record.name}"></h:outputText>
+	</p:column>
+	
+	<p:column filterBy="#{record.surname}" headerText="Surname"  filterMatchMode="contains">
+		<h:outputText value="#{record.surname}"></h:outputText>
+	</p:column>
+	<p:column>
+		<f:facet name="header">
+			<h:outputText value="Age"></h:outputText>
+		</f:facet>
+		<h:outputText value="#{record.age}"></h:outputText>
+	</p:column>
+	<p:column>
+		<f:facet name="header">
+			<h:outputText value="Address"></h:outputText>
+		</f:facet>
+		<h:outputText value="#{record.address}"></h:outputText>
+	</p:column>
+	<p:column>
+		<f:facet name="header">
+			<h:outputText value="Email"></h:outputText>
+		</f:facet>
+		<h:outputText value="#{record.email}"></h:outputText>
+	</p:column>
+	
+	
+	<p:column>
+		<f:facet name="header">
+			<h:outputText value="Phone Number"></h:outputText>
+		</f:facet>
+		<!-- <h:outputText value="#{address.name}"></h:outputText> -->
+		<p:commandButton id="imageBtn" value="Phone Numbers" type="button" />
+        <p:overlayPanel id="imagePanel" for="imageBtn" hideEffect="fade" >          
+		     <p:dataTable value="#{record.phones}" var="phone" rendered="#{record.phones ne null}">		     
+		       <p:column>
+		         <h:outputText value="#{phone.phoneNo}"></h:outputText>
+		       </p:column>
+		     </p:dataTable>
+       </p:overlayPanel>
+       		   		  		   		   		
+	</p:column>
+	<p:column>
+	    <f:facet name="header">
+	      <h:outputText value="Edit"></h:outputText>
+	    </f:facet>
+	     <h:commandButton value="Edit" action="#{address.saveEditedAdress(record)}"></h:commandButton>
+	</p:column>
+	<p:column>
+	     <f:facet name="header">
+	      <h:outputText value="Delete"></h:outputText>
+	    </f:facet>
+	     <h:commandButton value="Delete" action="#{addressService.delete(record)}"></h:commandButton>
+	</p:column>
+ </p:dataTable>
+</h:form>
+  </h:body>
+</html>

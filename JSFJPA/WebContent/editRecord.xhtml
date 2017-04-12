@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:p="http://primefaces.org/ui">
+
+  <h:head>
+   
+   
+  </h:head>
+  
+  <h:body>
+  
+      <ui:include src="task.xhtml"/>
+    <h:form>
+      <p:panel id="basic" header="Edit Record"  style="margin-bottom:20px">
+        <p:panelGrid columns="2"  cellpadding="3">
+         <h:outputText style="font-weight: bold;" value="Name"/>
+         <h:inputText value="#{address.name}" validatorMessage="Name has invalid characters!">
+            <f:validateRegex pattern="[a-zA-Z]+"/>
+         </h:inputText>
+      
+         <h:outputText style="font-weight: bold;" value="Surname"/>
+         <h:inputText value="#{address.surname}" validatorMessage="Surname has invalid characters!">
+             <f:validateRegex pattern="[a-zA-Z]+"/>
+         </h:inputText>
+         
+      
+         <h:outputText style="font-weight: bold;" value="Age"/>
+          <h:inputText value="#{address.age}"  converterMessage="The age must be integer value!" validatorMessage="The age area must be filled!">
+             <f:convertNumber integerOnly="true" type="number" />
+             <f:validateRequired/>
+          </h:inputText>
+       
+         <h:outputText style="font-weight: bold;" value="Address"/>
+         <h:inputTextarea value="#{address.address}" style="width: 200px; height= 250px" validatorMessage="The address area must be filled!">
+           <f:validateRequired/>
+         </h:inputTextarea>
+          
+         <h:outputText style="font-weight: bold;" value="Email"/>
+          <h:inputText  value="#{address.email}" validatorMessage="The email must be valid format!">
+            
+            <f:validateRegex pattern="([^.@]+)(\.[^.@]+)*@([^.@]+\.)+([^.@]+)"/>
+         </h:inputText>
+      
+         <h:outputText style="font-weight: bold;" value="Phone Number"/>
+           <p:row>
+             <h:dataTable id="dataTable" value="#{address.phones}" var="phone">
+                <h:column>
+                   <h:inputText  id="px" value="#{phone.phoneNo}"/>
+                
+                
+                    <h:commandButton value="Remove Phone">
+                        <p:ajax  listener="#{address.onButtonRemoveFieldClick(phone)}" immediate="true" update="@form" />
+                    </h:commandButton>                
+               </h:column>           
+             </h:dataTable> 
+             <h:commandButton value="Add Phone">
+                 <p:ajax listener="#{address.onButtonAddFieldClick}" process="@form" update="dataTable" /> 
+             </h:commandButton>
+           </p:row>             
+            
+            <h:outputText value=""/>    
+           <h:commandButton style="font-weight: bold" value="Edit Record" action="#{addressService.updateAddress(address)}"/>
+        </p:panelGrid>
+         <f:facet name="footer">
+             <h:messages style="color: red"/>
+         </f:facet> 
+      </p:panel>
+    </h:form>
+    
+  
+  </h:body>
+</html>
