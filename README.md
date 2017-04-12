@@ -26,6 +26,13 @@ Uygulamayı kurmak için yapılması gerekne önemli maddeler vardır.Bunlar ş�
 4-Baştaki 3 adımı uyguladıktan sonra sistemsel olarak sorun olmayacaktır.Kodu github hesabımdan indirdikten sonra ;
  Eclipse IDE->File->Import-> Existing Projects into Workspace sekmelerine basıp "browse" ile de indirilen projeyi seçip ,projeyi Eclipse'ye dahil edin.
  
+ 5-Proje classpath içinde bir "hibernate.cfg.xml" adında bire dosya bulunmaktadır.Muhtelemen bu dosya sebebiyle uygulama çalışmayacaktır.Şu kod segmentlerine dikkat edelim;
+ 
+ ```xml
+  <property name="hibernate.connection.url">
+        jdbc:mysql://localhost:3306/tutorial
+    </property>
+```
 
  
 
