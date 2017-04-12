@@ -16,9 +16,13 @@ Uygulama sunucusu olarak Apache Tomcat kullandım.Bunun nedeni ise sektörde ço
 
 ## Kurulum
 Uygulamayı kurmak için yapılması gerekne önemli maddeler vardır.Bunlar şöyle;
+
 1-Eclipse IDE Java EE sürümü yüklenmelidir.Farklı isimleri var(Kepler,Mars vs...) fakat hepsi aynı işi yapıyor.
+
 2-Apache Tomcat 7,8,9 sürümlerinden biri indirilip kurulmalıdır.Bu proje Apache Tomcat 8 ile geliştirildi.
+
 3-Mysql en son sürümünü indiriniz.Ayrıca Navicat'inde en son sürümünü indirmeyi unutmayınız.Ama Navicat şart değil,Mysql Workbench olması da sorun yaratmayacaktır.Bu kısımda en önemli nokta Mysql'in kurulmasıdır.
+
 4-Baştaki 3 adımı uyguladıktan sonra sistemsel olarak sorun olmayacaktır.Kodu github hesabımdan indirdikten sonra ;
  Eclipse IDE->File->Import-> Existing Projects into Workspace sekmelerine basıp "browse" ile de indirilen projeyi seçip ,projeyi Eclipse'ye dahil edin.
  
