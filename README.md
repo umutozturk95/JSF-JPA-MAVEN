@@ -1,5 +1,5 @@
 # JSF-PRIMEFACES-JPA-MAVEN
- ##Adres Kayıt Uygulaması
+ ## Adres Kayıt Uygulaması
 
  Öncelikle projeden bahsetmek isterim, sistemde bilgisi gömülü olan bir adet "admin" bulunmaktadır.
  Adminin username'i "admin1" password ise "123" şeklindedir.Bu bilgileri kullanarak sisteme giriş yapabilir
